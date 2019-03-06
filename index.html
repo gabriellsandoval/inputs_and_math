@@ -31,30 +31,35 @@
       <p>This is a loose estimate and is designed to show a loose impact rather than an exact change.</p>
       <table>
         <tr>
+          <!-- tr stands for table row. th stands for table header -->
           <th>Item</th>
           <th>Qty</th>
           <th>Cost</th>
           <th>Total before tariff</th>
           <th>Total after tariff</th>
         </tr>
-        <tr>
+        <tr class="item" data-tariff-percent="0">
           <td>Labor</td>
-          <td><input /></td>
-          <td><input /></td>
+          <td class="qty"><input type="number" min="0" placeholder="# workers" /></td>
+          <td class="cost"><input type="number" min="0" placeholder="$/hour" /></td>
           <td class="pre_total">$<span></span></td>
           <td class="post_total">$<span></span></td>
         </tr>
-        <tr>
+        <tr class="item" data-tariff-percent="25">
           <td>Steel materials</td>
-          <td><input /></td>
-          <td><input /></td>
+          <td class="qty"><input type="number" min="0" /></td>
+          <td class="cost"><input type="number" min="0" /></td>
           <td class="pre_total">$<span></span></td>
           <td class="post_total">$<span></span></td>
+
+          <!-- "find" goes down and "closest" goes up. -->
+          <!-- parseInt to make strings recognized as numbers -->
+          <!-- NaN stands for "not a number" -->
         </tr>
-        <tr>
+        <tr class="item" data-tariff-percent="10">
           <td>Aluminum materials</td>
-          <td><input /></td>
-          <td><input /></td>
+          <td class="qty"><input type="number" min="0" /></td>
+          <td class="cost"><input type="number" min="0" /></td>
           <td class="pre_total">$<span></span></td>
           <td class="post_total">$<span></span></td>
         </tr>
@@ -70,6 +75,7 @@
       <div id="post_total" class="total">
         <h2>Cost after tariffs</h2>
         <span></span>
+        <!-- span tags are pretty cool, says TC -->
       </div>
     </div>
 
