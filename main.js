@@ -43,6 +43,26 @@ $("body").on("click", ".calculate", function (e) {
 
 	});
 
+	let post_total = 0;
+
+	$(".post_total").each(function () {
+		const $this_post_total = $(this);
+		const $this_post_total_span = $this_post_total.find("span");
+
+		let value = $this_post_total_span.text();
+		value = parseFloat(value);
+
+		post_total = post_total + value;
+
+	})
+
+
+	$("#pre_total").find("span").text(pre_total);
+	$("#post_total").find("span").text(post_total);
+
 	console.log("working!");
 	console.log(pre_total);
-});
+	console.log(post_total);
+
+
+})
